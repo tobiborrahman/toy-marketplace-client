@@ -2,28 +2,28 @@ import React from 'react';
 import Swal from 'sweetalert2';
 
 const AddToys = () => {
-	const handleNewCoffee = (event) => {
+	const handleNewToy = (event) => {
 		event.preventDefault();
 		const form = event.target;
 
 		const name = form.name.value;
 		const quantity = form.quantity.value;
-		const supplier = form.supplier.value;
+		const seller = form.seller.value;
 		const category = form.category.value;
-		const taste = form.taste.value;
+		const price = form.price.value;
 		const details = form.details.value;
-		const photo = form.photo.value;
+		const picture = form.picture.value;
+		const rating = form.rating.value;
 
-		const newCoffee = {
+		const newToy = {
 			name,
 			quantity,
-			supplier,
+			seller,
 			category,
-			taste,
+			price,
 			details,
-			photo,
+			picture,
 		};
-		// console.log(newCoffee);
 
 		if (category === 'football') {
 			fetch('http://localhost:5000/football', {
@@ -31,7 +31,7 @@ const AddToys = () => {
 				headers: {
 					'content-type': 'application/json',
 				},
-				body: JSON.stringify(newCoffee),
+				body: JSON.stringify(newToy),
 			})
 				.then((res) => res.json())
 				.then((data) => {
@@ -53,7 +53,7 @@ const AddToys = () => {
 				headers: {
 					'content-type': 'application/json',
 				},
-				body: JSON.stringify(newCoffee),
+				body: JSON.stringify(newToy),
 			})
 				.then((res) => res.json())
 				.then((data) => {
@@ -75,7 +75,7 @@ const AddToys = () => {
 				headers: {
 					'content-type': 'application/json',
 				},
-				body: JSON.stringify(newCoffee),
+				body: JSON.stringify(newToy),
 			})
 				.then((res) => res.json())
 				.then((data) => {
@@ -96,7 +96,7 @@ const AddToys = () => {
 			headers: {
 				'content-type': 'application/json',
 			},
-			body: JSON.stringify(newCoffee),
+			body: JSON.stringify(newToy),
 		})
 			.then((res) => res.json())
 			.then((data) => {
@@ -118,18 +118,18 @@ const AddToys = () => {
 				<div className="md:my-20">
 					<div className="md:w-[60%] mx-auto flex-col lg:flex-row-reverse">
 						<div className="flex-shrink-0 bg-[#F4F3F0]">
-							<h1 className="text-4xl text-center drop-shadow-2xl text-sh text-[#374151] py-7">
-								Add New Coffee
+							<h1 className="text-5xl uppercase font-semibold text-center drop-shadow-2xl text-sh text-[#374151] py-7">
+								Add New Toy
 							</h1>
 							<p className="text-center text-[#374151] pb-5">
 								It is a long established fact that a reader will
-								be distraceted by the readable content of a page
+								be distracted by the readable content of a page
 								when looking at its layout. The point of using
 								Lorem Ipsum is that it has a more-or-less normal
 								distribution of letters, as opposed to using
 								Content here.
 							</p>
-							<form onSubmit={handleNewCoffee} className="p-10">
+							<form onSubmit={handleNewToy} className="p-10">
 								<div className="md:flex">
 									<div className="md:mr-10 md:w-2/4">
 										<div className="">
@@ -141,20 +141,20 @@ const AddToys = () => {
 											<input
 												type="text"
 												name="name"
-												placeholder="Enter coffee name"
+												placeholder="Enter toy name"
 												className="w-full p-2"
 											/>
 										</div>
 										<div className="">
 											<label className="label">
 												<span className="label-text">
-													Supplier
+													Seller
 												</span>
 											</label>
 											<input
 												type="text"
-												name="supplier"
-												placeholder="Enter coffee supplier"
+												name="seller"
+												placeholder="Enter toy seller"
 												className="w-full p-2"
 											/>
 										</div>
@@ -167,7 +167,7 @@ const AddToys = () => {
 											<input
 												type="text"
 												name="category"
-												placeholder="Enter coffee category"
+												placeholder="Enter category Ex. 'cricket', 'football'"
 												className="w-full p-2"
 											/>
 										</div>
@@ -182,33 +182,33 @@ const AddToys = () => {
 											<input
 												type="text"
 												name="quantity"
-												placeholder="Enter coffee chef"
+												placeholder="Enter toy quantity"
 												className="w-full p-2"
 											/>
 										</div>
 										<div className="">
 											<label className="label">
 												<span className="label-text">
-													Taste
+													Price
 												</span>
 											</label>
 											<input
 												type="text"
-												name="taste"
-												placeholder="Enter coffee taste"
+												name="price"
+												placeholder="Enter toy price"
 												className="w-full p-2"
 											/>
 										</div>
 										<div className="">
 											<label className="label">
 												<span className="label-text">
-													Details
+													Toy Details
 												</span>
 											</label>
 											<input
 												type="text"
 												name="details"
-												placeholder="Enter coffee details"
+												placeholder="Enter toy details"
 												className="w-full p-2"
 											/>
 										</div>
@@ -217,19 +217,19 @@ const AddToys = () => {
 								<div className="form-control">
 									<label className="label">
 										<span className="label-text">
-											Photo
+											Picture
 										</span>
 									</label>
 									<input
 										type="text"
-										name="photo"
-										placeholder="Enter phot URL"
+										name="picture"
+										placeholder="Enter photo URL"
 										className="p-2"
 									/>
 								</div>
 								<div className="form-control mt-6">
 									<button className="p-2 text-[#331A15] bg-[#D2B48C]">
-										Add Coffee
+										Add toy
 									</button>
 								</div>
 							</form>
