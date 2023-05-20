@@ -1,5 +1,7 @@
 import React from 'react';
 import Swal from 'sweetalert2';
+import Navbar from '../shared/Navbar';
+import Footer from '../shared/Footer';
 
 const AddToys = () => {
 	const handleNewToy = (event) => {
@@ -23,8 +25,10 @@ const AddToys = () => {
 			price,
 			details,
 			picture,
+			rating,
 		};
 
+		console.log(newToy);
 		if (category === 'football') {
 			fetch('http://localhost:5000/football', {
 				method: 'POST',
@@ -39,7 +43,7 @@ const AddToys = () => {
 					if (data.insertedId) {
 						Swal.fire({
 							title: 'Success!',
-							text: 'Item added successfully',
+							text: 'Toy added successfully',
 							icon: 'success',
 							confirmButtonText: 'Okay',
 						});
@@ -168,6 +172,19 @@ const AddToys = () => {
 												type="text"
 												name="category"
 												placeholder="Enter category Ex. 'cricket', 'football'"
+												className="w-full p-2"
+											/>
+										</div>
+										<div className="">
+											<label className="label">
+												<span className="label-text">
+													Ratings
+												</span>
+											</label>
+											<input
+												type="text"
+												name="rating"
+												placeholder="Enter ratings"
 												className="w-full p-2"
 											/>
 										</div>

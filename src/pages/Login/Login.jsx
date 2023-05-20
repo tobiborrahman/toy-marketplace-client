@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { GoogleAuthProvider } from 'firebase/auth';
 import Navbar from '../shared/Navbar';
+import Footer from '../shared/Footer';
 
 const Login = () => {
 	const { signIn, googleSignIn } = useContext(AuthContext);
@@ -37,13 +38,13 @@ const Login = () => {
 	};
 	return (
 		<>
-			<Navbar></Navbar>
-			<div className="flex justify-center mt-20">
+			<div className="flex justify-center my-20">
 				<div className="text-center w-[500px] border p-10 bg-gray-200">
 					<h1 className="text-7xl text-black mb-10">Login Now!</h1>
 					<form onSubmit={handleSubmit(onSubmit)}>
 						<input
 							className="border p-2 w-full"
+							placeholder="Please enter email"
 							type="email"
 							{...register('email', { required: true })}
 						/>{' '}
@@ -51,6 +52,7 @@ const Login = () => {
 						<br />
 						<input
 							className="border p-2 w-full"
+							placeholder="Please enter password"
 							type="password"
 							{...register('password', { required: true })}
 						/>

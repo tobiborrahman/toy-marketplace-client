@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AllToys from '../AllToys/AllToys';
+import Navbar from '../shared/Navbar';
+import Footer from '../shared/Footer';
 
 const Toys = () => {
 	const [toys, setToys] = useState([]);
@@ -13,18 +15,20 @@ const Toys = () => {
 
 	return (
 		<div>
-			<tbody className="flex justify-between py-7 bg-gray-200">
-				<th>Seller</th>
-				<th>Toy Name</th>
-				<th>Sub Category</th>
-				<th>Price</th>
-				<th>Available Quantity</th>
-				<th>View Details</th>
-			</tbody>
+			<div className="my-20">
+				<tbody className="flex justify-between py-7 bg-gray-200">
+					<th>Seller</th>
+					<th>Toy Name</th>
+					<th>Sub Category</th>
+					<th>Price</th>
+					<th>Available Quantity</th>
+					<th>View Details</th>
+				</tbody>
 
-			{toys.map((toy) => (
-				<AllToys key={toy._id} toy={toy}></AllToys>
-			))}
+				{toys.map((toy) => (
+					<AllToys key={toy._id} toy={toy}></AllToys>
+				))}
+			</div>
 		</div>
 	);
 };
