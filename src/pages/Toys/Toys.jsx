@@ -15,8 +15,8 @@ const Toys = () => {
 
 	return (
 		<div>
-			<div className="my-20">
-				<tbody className="flex justify-between py-7 bg-gray-200">
+			<div className="mb-20">
+				<tbody className="flex justify-between py-7 px-5 bg-gray-200">
 					<th>Seller</th>
 					<th>Toy Name</th>
 					<th>Sub Category</th>

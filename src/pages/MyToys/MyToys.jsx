@@ -54,7 +54,7 @@ const MyToys = () => {
 	return (
 		<div>
 			<div>
-				<nav className="flex justify-between">
+				<nav className="flex justify-between px-5">
 					<th>Name</th>
 					<th>Job</th>
 					<th>Favorite Color</th>

@@ -2,23 +2,20 @@ import React, { useLayoutEffect } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllToys = ({ toy }) => {
-	// const singleToy = useLoaderData();
-	const { _id, name, category, quantity } = toy;
+	console.log(toy);
+	const { _id, name, category, quantity, sellerName, price } = toy;
 
 	return (
 		<>
-			<div className="overflow-x-auto ">
+			<div className=" ">
 				<table className="table  w-full">
-					{/* head */}
-
 					<tbody className="border-b">
-						{/* row 1 */}
-						<tr>
-							<td>seller</td>
+						<tr className="flex justify-between items-center">
+							<td>{sellerName}</td>
 							<td>{name}</td>
 
 							<td>{category}</td>
-							<td>price</td>
+							<td>{price}</td>
 							<td>{quantity}</td>
 							<td>
 								<Link to={`/singleToy/${_id}`}>

@@ -10,22 +10,24 @@ const AddToys = () => {
 
 		const name = form.name.value;
 		const quantity = form.quantity.value;
-		const seller = form.seller.value;
+		const sellerName = form.sellerName.value;
 		const category = form.category.value;
 		const price = form.price.value;
 		const details = form.details.value;
 		const picture = form.picture.value;
 		const rating = form.rating.value;
+		const email = form.email.value;
 
 		const newToy = {
 			name,
 			quantity,
-			seller,
+			sellerName,
 			category,
 			price,
 			details,
 			picture,
 			rating,
+			email,
 		};
 
 		console.log(newToy);
@@ -139,7 +141,7 @@ const AddToys = () => {
 										<div className="">
 											<label className="label">
 												<span className="label-text">
-													Name
+													Toy Name
 												</span>
 											</label>
 											<input
@@ -149,19 +151,7 @@ const AddToys = () => {
 												className="w-full p-2"
 											/>
 										</div>
-										<div className="">
-											<label className="label">
-												<span className="label-text">
-													Seller
-												</span>
-											</label>
-											<input
-												type="text"
-												name="seller"
-												placeholder="Enter toy seller"
-												className="w-full p-2"
-											/>
-										</div>
+
 										<div className="">
 											<label className="label">
 												<span className="label-text">
@@ -188,6 +178,19 @@ const AddToys = () => {
 												className="w-full p-2"
 											/>
 										</div>
+										<div className="form-control">
+											<label className="label">
+												<span className="label-text">
+													Picture
+												</span>
+											</label>
+											<input
+												type="text"
+												name="picture"
+												placeholder="Enter photo URL"
+												className="p-2"
+											/>
+										</div>
 									</div>
 									<div className="md:w-2/4">
 										<div className="">
@@ -200,6 +203,19 @@ const AddToys = () => {
 												type="text"
 												name="quantity"
 												placeholder="Enter toy quantity"
+												className="w-full p-2"
+											/>
+										</div>
+										<div className="">
+											<label className="label">
+												<span className="label-text">
+													Seller Name
+												</span>
+											</label>
+											<input
+												type="text"
+												name="sellerName"
+												placeholder="Enter seller name"
 												className="w-full p-2"
 											/>
 										</div>
@@ -219,29 +235,30 @@ const AddToys = () => {
 										<div className="">
 											<label className="label">
 												<span className="label-text">
-													Toy Details
+													Email
 												</span>
 											</label>
 											<input
-												type="text"
-												name="details"
-												placeholder="Enter toy details"
+												type="email"
+												name="email"
+												placeholder="Enter seller email"
 												className="w-full p-2"
 											/>
 										</div>
 									</div>
 								</div>
-								<div className="form-control">
+
+								<div className="">
 									<label className="label">
 										<span className="label-text">
-											Picture
+											Toy Details
 										</span>
 									</label>
 									<input
 										type="text"
-										name="picture"
-										placeholder="Enter photo URL"
-										className="p-2"
+										name="details"
+										placeholder="Enter toy details"
+										className="w-full p-2"
 									/>
 								</div>
 								<div className="form-control mt-6">
