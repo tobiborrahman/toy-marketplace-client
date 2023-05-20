@@ -3,7 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const AllToys = ({ toy }) => {
 	const singleToy = useLoaderData();
-	const { _id, name, photo, category, quantity } = toy;
+	const { _id, name,  category, quantity } = toy;
 
 	return (
 		<div className="overflow-x-auto ">

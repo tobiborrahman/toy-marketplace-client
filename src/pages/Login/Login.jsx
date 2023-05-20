@@ -32,7 +32,7 @@ const Login = () => {
 				console.log(result.user);
 			})
 			.catch((err) => {
-				console.log(err);
+				console.log(err.message);
 			});
 	};
 	return (
