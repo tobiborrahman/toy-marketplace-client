@@ -82,11 +82,39 @@ const router = createBrowserRouter([
 					),
 			},
 			{
-				path: '/toysDetails/:id',
-				element: <ToyDetails></ToyDetails>,
+				path: '/football/:id',
+				element: (
+					<PrivateRoute>
+						<ToyDetails></ToyDetails>
+					</PrivateRoute>
+				),
 				loader: ({ params }) =>
 					fetch(
-						`https://toy-marketplace-server-roan.vercel.app/toys/${params.id}`
+						`https://toy-marketplace-server-roan.vercel.app/football/${params.id}`
+					),
+			},
+			{
+				path: '/cricket/:id',
+				element: (
+					<PrivateRoute>
+						<ToyDetails></ToyDetails>
+					</PrivateRoute>
+				),
+				loader: ({ params }) =>
+					fetch(
+						`https://toy-marketplace-server-roan.vercel.app/cricket/${params.id}`
+					),
+			},
+			{
+				path: '/volleyball/:id',
+				element: (
+					<PrivateRoute>
+						<ToyDetails></ToyDetails>
+					</PrivateRoute>
+				),
+				loader: ({ params }) =>
+					fetch(
+						`https://toy-marketplace-server-roan.vercel.app/volleyball/${params.id}`
 					),
 			},
 		],

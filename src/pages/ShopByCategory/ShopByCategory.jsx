@@ -1,12 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const ShopByCategory = () => {
 	const [cricket, setCricket] = useState([]);
 	const [football, setFootball] = useState([]);
 	const [volleyball, setVolleyball] = useState([]);
+
+	const { user } = useContext(AuthContext);
+
+	const notify = () => toast('You have to log in first to view details');
 
 	useEffect(() => {
 		fetch('https://toy-marketplace-server-roan.vercel.app/cricket')
@@ -33,7 +40,7 @@ const ShopByCategory = () => {
 	}, []);
 
 	return (
-		<div className="py-10 bg-pink-50">
+		<div className="py-10 bg-pink-50 px-10">
 			<h1 className="text-7xl text-center py-20">Shop By Category</h1>
 			<Tabs>
 				<TabList className="text-center my-10">
@@ -60,9 +67,17 @@ const ShopByCategory = () => {
 									<p>{footballToy.price}</p>
 									<p>{footballToy.rating}</p>
 									<div className="card-actions">
-										<button className="btn btn-primary">
-											View Details
-										</button>
+										<Link
+											to={`football/${footballToy._id}`}
+										>
+											<button
+												onClick={notify}
+												className="btn btn-primary"
+											>
+												View Details
+												<ToastContainer />
+											</button>
+										</Link>
 									</div>
 								</div>
 							</div>
@@ -70,7 +85,7 @@ const ShopByCategory = () => {
 					</div>
 				</TabPanel>
 				<TabPanel>
-					<div className="grid grid-cols-1 md:grid-cols-3">
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-3">
 						{cricket.map((cricketToy) => (
 							<div className="card w-96 bg-base-100 shadow-xl">
 								<figure className="px-10 pt-10">
@@ -87,9 +102,7 @@ const ShopByCategory = () => {
 									<p>{cricketToy.price}</p>
 									<p>{cricketToy.rating}</p>
 									<div className="card-actions">
-										<Link
-											to={`/toyDetails/${cricketToy._id}`}
-										>
+										<Link to={`/cricket/${cricketToy._id}`}>
 											<button className="btn btn-primary">
 												View Details
 											</button>
@@ -101,7 +114,7 @@ const ShopByCategory = () => {
 					</div>
 				</TabPanel>
 				<TabPanel>
-					<div className="grid grid-cols-1 md:grid-cols-3">
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-3">
 						{volleyball.map((volleyToy) => (
 							<div className="card w-96 bg-base-100 shadow-xl">
 								<figure className="px-10 pt-10">
@@ -118,9 +131,13 @@ const ShopByCategory = () => {
 									<p>{volleyToy.price}</p>
 									<p>{volleyToy.rating}</p>
 									<div className="card-actions">
-										<button className="btn btn-primary">
-											View Details
-										</button>
+										<Link
+											to={`volleyball/${volleyToy._id}`}
+										>
+											<button className="btn btn-primary">
+												View Details
+											</button>
+										</Link>
 									</div>
 								</div>
 							</div>

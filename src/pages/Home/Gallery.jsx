@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+// 
 
 const Gallery = () => {
+	useEffect(() => {
+		AOS.init();
+	}, []);
 	return (
-		<div className="bg-pink-50">
+		<div
+			className="bg-pink-50"
+			data-aos="fade-zoom-in"
+			data-aos-offset="200"
+			data-aos-easing="ease-in-sine"
+			data-aos-duration="2000"
+			data-aos-delay="1000"
+		>
 			<h1 className="text-7xl text-center py-20">Gallery</h1>
 			<div className="flex">
 				<div className="w-[300px]">

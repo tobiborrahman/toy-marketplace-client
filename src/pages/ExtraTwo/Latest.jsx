@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Latest = () => {
+	useEffect(() => {
+		AOS.init();
+	}, []);
+
 	return (
-		<div className="bg-pink-50">
+		<div
+			className="bg-pink-50"
+			data-aos="fade-zoom-in"
+			data-aos-offset="200"
+			data-aos-easing="ease-in-sine"
+			data-aos-duration="2000"
+			data-aos-delay="1500"
+		>
 			<h1 className="text-7xl text-center py-20">Latest Collection</h1>
 			<div className="flex justify-between pb-20">
 				<div className="w-1/3 border-2 text-center">

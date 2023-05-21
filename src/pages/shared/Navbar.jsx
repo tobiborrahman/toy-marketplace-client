@@ -15,7 +15,12 @@ const Navbar = () => {
 
 	return (
 		<div className="flex justify-between items-center bg-black py-8 px-14">
-			<div>
+			<div className="flex">
+				<img
+					className="w-24 h-16"
+					src="https://i.ibb.co/6RpYGsm/pngegg.png"
+					alt=""
+				/>
 				<h1 className="text-2xl font-semibold uppercase text-white">
 					Sports <br /> <span className="border-r">Shop</span>
 				</h1>
@@ -23,6 +28,7 @@ const Navbar = () => {
 			<div>
 				<nav>
 					<Link
+						activeClassName="active-link"
 						className="text-white text-xl hover:border-b-[3px] hover:border-green-500 mr-3 font-semibold uppercase"
 						to="/"
 					>

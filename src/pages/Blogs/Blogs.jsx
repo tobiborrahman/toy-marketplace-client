@@ -1,22 +1,9 @@
 import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 const Blogs = () => {
-	useEffect(() => {
-		AOS.init();
-	}, []);
-
 	return (
 		<div className="md:my-20">
-			<div
-				className="border p-10 m-10 rounded"
-				data-aos="fade-zoom-in"
-				data-aos-offset="200"
-				data-aos-easing="ease-in-sine"
-				data-aos-duration="2000"
-				data-aos-delay="1000"
-			>
+			<div className="border p-10 m-10 rounded">
 				<h1 className="text-2xl font-semibold pb-3">
 					What is an access token and refresh token? How do they work
 					and where should we store them on the client-side?
