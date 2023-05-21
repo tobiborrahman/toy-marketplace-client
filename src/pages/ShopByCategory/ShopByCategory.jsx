@@ -88,7 +88,7 @@ const ShopByCategory = () => {
 									<p>{cricketToy.rating}</p>
 									<div className="card-actions">
 										<Link
-											to={`/singleToy/${cricketToy._id}`}
+											to={`/toyDetails/${cricketToy._id}`}
 										>
 											<button className="btn btn-primary">
 												View Details

@@ -13,6 +13,7 @@ import UpdateToy from '../pages/UpdateToy/UpdateToy';
 import Home from '../pages/Home/Home';
 import Blogs from '../pages/Blogs/Blogs';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
+import ToyDetails from '../pages/ToyDetails/ToyDetails';
 
 const router = createBrowserRouter([
 	{
@@ -75,6 +76,14 @@ const router = createBrowserRouter([
 						<UpdateToy></UpdateToy>
 					</PrivateRoute>
 				),
+				loader: ({ params }) =>
+					fetch(
+						`https://toy-marketplace-server-roan.vercel.app/toys/${params.id}`
+					),
+			},
+			{
+				path: '/toysDetails/:id',
+				element: <ToyDetails></ToyDetails>,
 				loader: ({ params }) =>
 					fetch(
 						`https://toy-marketplace-server-roan.vercel.app/toys/${params.id}`
