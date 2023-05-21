@@ -64,7 +64,9 @@ const router = createBrowserRouter([
 					</PrivateRoute>
 				),
 				loader: ({ params }) =>
-					fetch(`http://localhost:5000/toys/${params.id}`),
+					fetch(
+						`https://toy-marketplace-server-roan.vercel.app/toys/${params.id}`
+					),
 			},
 			{
 				path: '/updateToy/:id',
@@ -74,7 +76,9 @@ const router = createBrowserRouter([
 					</PrivateRoute>
 				),
 				loader: ({ params }) =>
-					fetch(`http://localhost:5000/toys/${params.id}`),
+					fetch(
+						`https://toy-marketplace-server-roan.vercel.app/toys/${params.id}`
+					),
 			},
 		],
 	},

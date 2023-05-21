@@ -9,7 +9,7 @@ const ShopByCategory = () => {
 	const [volleyball, setVolleyball] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/cricket')
+		fetch('https://toy-marketplace-server-roan.vercel.app/cricket')
 			.then((res) => res.json())
 			.then((data) => {
 				setCricket(data);
@@ -17,7 +17,7 @@ const ShopByCategory = () => {
 	}, []);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/football')
+		fetch('https://toy-marketplace-server-roan.vercel.app/football')
 			.then((res) => res.json())
 			.then((data) => {
 				setFootball(data);
@@ -25,7 +25,7 @@ const ShopByCategory = () => {
 	}, []);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/volleyball')
+		fetch('https://toy-marketplace-server-roan.vercel.app/volleyball')
 			.then((res) => res.json())
 			.then((data) => {
 				setVolleyball(data);

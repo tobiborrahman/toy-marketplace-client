@@ -32,7 +32,7 @@ const AddToys = () => {
 
 		console.log(newToy);
 		if (category === 'football') {
-			fetch('http://localhost:5000/football', {
+			fetch('https://toy-marketplace-server-roan.vercel.app/football', {
 				method: 'POST',
 				headers: {
 					'content-type': 'application/json',
@@ -54,7 +54,7 @@ const AddToys = () => {
 		}
 
 		if (category === 'cricket') {
-			fetch('http://localhost:5000/cricket', {
+			fetch('https://toy-marketplace-server-roan.vercel.app/cricket', {
 				method: 'POST',
 				headers: {
 					'content-type': 'application/json',
@@ -76,7 +76,7 @@ const AddToys = () => {
 		}
 
 		if (category === 'volleyball') {
-			fetch('http://localhost:5000/volleyball', {
+			fetch('https://toy-marketplace-server-roan.vercel.app/volleyball', {
 				method: 'POST',
 				headers: {
 					'content-type': 'application/json',
@@ -97,7 +97,7 @@ const AddToys = () => {
 				});
 		}
 
-		fetch('http://localhost:5000/toys', {
+		fetch('https://toy-marketplace-server-roan.vercel.app/toys', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json',

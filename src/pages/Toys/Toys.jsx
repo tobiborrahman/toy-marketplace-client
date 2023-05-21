@@ -1,20 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import AllToys from '../AllToys/AllToys';
-import Navbar from '../shared/Navbar';
-import Footer from '../shared/Footer';
 
 const Toys = () => {
 	const [toys, setToys] = useState([]);
+	const [limit, setLimit] = useState(0);
+
+	const handleLimit = (event) => {
+		event.preventDefault();
+		const limit = event.target.limit.value;
+		setLimit(limit);
+	};
+
 	useEffect(() => {
-		fetch('http://localhost:5000/toys')
+		fetch(
+			`https://toy-marketplace-server-roan.vercel.app/toys?limit=${limit}`
+		)
 			.then((res) => res.json())
 			.then((data) => {
 				setToys(data);
 			});
-	}, []);
+	}, [limit]);
 
 	return (
 		<div>
+			<div className="form-control my-5">
+				<form onSubmit={handleLimit} className="input-group">
+					<input
+						type="text"
+						placeholder="set limit"
+						name="limit"
+						className="input input-bordered w-1/2"
+					/>
+					<input type="submit" value="Load Data" className="btn" />
+				</form>
+			</div>
+
 			<div className="mb-20">
 				<tbody className="flex justify-between py-7 px-5 bg-gray-200">
 					<th>Seller</th>

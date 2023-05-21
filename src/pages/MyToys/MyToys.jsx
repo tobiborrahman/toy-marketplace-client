@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
-import { key } from 'localforage';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -8,14 +7,14 @@ const MyToys = () => {
 	const { user } = useContext(AuthContext);
 	const [userToys, setUserToys] = useState([]);
 
-	const url = `http://localhost:5000/toys?email=${user?.email}`;
-	useEffect(() => {
-		fetch(url)
-			.then((res) => res.json())
-			.then((data) => {
-				setUserToys(data);
-			});
-	}, []);
+	// const url = `https://toy-marketplace-server-roan.vercel.app/toys?email=${user?.email}`;
+	// useEffect(() => {
+	// 	fetch(url)
+	// 		.then((res) => res.json())
+	// 		.then((data) => {
+	// 			setUserToys(data);
+	// 		});
+	// }, []);
 
 	const handleDelete = (_id) => {
 		console.log(_id);
@@ -29,9 +28,12 @@ const MyToys = () => {
 			confirmButtonText: 'Yes, delete it!',
 		}).then((result) => {
 			if (result.isConfirmed) {
-				fetch(`http://localhost:5000/toys/${_id}`, {
-					method: 'DELETE',
-				})
+				fetch(
+					`https://toy-marketplace-server-roan.vercel.app/toys/${_id}`,
+					{
+						method: 'DELETE',
+					}
+				)
 					.then((res) => res.json())
 					.then((data) => {
 						console.log(data);
