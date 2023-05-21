@@ -44,16 +44,14 @@ const Navbar = () => {
 					) : (
 						''
 					)}
-					{user ? (
-						<Link
-							className="text-white text-xl hover:border-b-[3px] hover:border-green-500  mr-3 font-semibold uppercase"
-							to="/addToys"
-						>
-							Add a Toy
-						</Link>
-					) : (
-						''
-					)}
+
+					<Link
+						className="text-white text-xl hover:border-b-[3px] hover:border-green-500  mr-3 font-semibold uppercase"
+						to="/addToys"
+					>
+						Add a Toy
+					</Link>
+
 					<Link
 						className="text-white text-xl hover:border-b-[3px] hover:border-green-500  mr-3 font-semibold uppercase"
 						to="/blogs"
