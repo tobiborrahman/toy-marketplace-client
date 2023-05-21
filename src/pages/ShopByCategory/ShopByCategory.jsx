@@ -33,8 +33,8 @@ const ShopByCategory = () => {
 	}, []);
 
 	return (
-		<div className="my-10">
-			<h1 className="text-5xl text-center">Shop By Category</h1>
+		<div className="py-10 bg-pink-50">
+			<h1 className="text-7xl text-center py-20">Shop By Category</h1>
 			<Tabs>
 				<TabList className="text-center my-10">
 					<Tab>Football</Tab>

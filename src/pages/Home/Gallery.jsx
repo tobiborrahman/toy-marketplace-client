@@ -1,17 +1,9 @@
 import React from 'react';
 
 const Gallery = () => {
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	return (
-		<div>
-			<h1 className="text-7xl text-center my-20">Gallery</h1>
+		<div className="bg-pink-50">
+			<h1 className="text-7xl text-center py-20">Gallery</h1>
 			<div className="flex">
 				<div className="w-[300px]">
 					<img
