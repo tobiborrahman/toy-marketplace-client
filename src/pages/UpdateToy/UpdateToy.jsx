@@ -33,7 +33,7 @@ const UpdateToy = () => {
 		const rating = form.rating.value;
 		const email = form.email.value;
 
-		const updateToy = {
+		const updatedToy = {
 			_id,
 			name,
 			quantity,
@@ -51,12 +51,12 @@ const UpdateToy = () => {
 			headers: {
 				'content-type': 'application/json',
 			},
-			body: JSON.stringify(updateToy),
+			body: JSON.stringify(updatedToy),
 		})
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
-				if (data.insertedId) {
+				if (data.modifiedCount > 0) {
 					Swal.fire({
 						title: 'Success!',
 						text: 'Toy updated successfully',

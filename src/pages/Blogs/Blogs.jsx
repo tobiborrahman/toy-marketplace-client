@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 
 const Blogs = () => {
 	return (
-		<div className="md:my-20">
-			<div className="border p-10 m-10 rounded">
+		<div className="md:py-20 bg-pink-50">
+			<div className="border-2 border-pink-200 p-10 m-10 rounded">
 				<h1 className="text-2xl font-semibold pb-3">
 					What is an access token and refresh token? How do they work
 					and where should we store them on the client-side?
@@ -69,7 +69,7 @@ const Blogs = () => {
 					requirements and security needs.
 				</p>
 			</div>
-			<div className="border p-10 m-10 rounded">
+			<div className="border-2 border-pink-200 p-10 m-10 rounded">
 				<h1 className="text-2xl font-semibold pb-3">
 					Compare SQL and NoSQL databases?
 				</h1>
@@ -134,7 +134,7 @@ const Blogs = () => {
 					requirements and security needs.
 				</p>
 			</div>
-			<div className="border p-10 m-10 rounded">
+			<div className="border-2 border-pink-200 p-10 m-10 rounded">
 				<h1 className="text-2xl font-semibold pb-3">
 					What is express js? What is Nest JS
 				</h1>
@@ -184,7 +184,7 @@ const Blogs = () => {
 					requirements and preferences of your project.
 				</p>
 			</div>
-			<div className="border p-10 m-10 rounded">
+			<div className="border-2 border-pink-200 p-10 m-10 rounded">
 				<h1 className="text-2xl font-semibold pb-3">
 					What is MongoDB aggregate and how does it work
 				</h1>

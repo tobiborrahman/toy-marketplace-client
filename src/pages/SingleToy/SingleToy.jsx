@@ -5,33 +5,21 @@ const SingleToy = () => {
 	const singleToy = useLoaderData();
 	console.log(singleToy);
 
-	const {
-		_id,
-		name,
-		picture,
-		category,
-		sellerName,
-		email,
-		price,
-		rating,
-		details,
-		quantity,
-	} = singleToy;
+	const { name, picture, category, sellerName, price, details, quantity } =
+		singleToy;
 	return (
-		<div>
-			<div>
+		<div className="py-20 flex justify-center items-center">
+			<div className=" h-[85vh] border-2 border-pink-200 p-10">
 				<div>
-					<img className="h-[500px] w-full" src={picture} alt="" />
+					<img className="w-[1000px] h-[60vh]" src={picture} alt="" />
 				</div>
-				<div className="text-center">
-					<h3 className="font-bold text-lg">{name}</h3>
-					<h3 className="font-bold text-lg">{category}</h3>
-					<h3 className="font-bold text-lg">{sellerName}</h3>
-					<h3 className="font-bold text-lg">{quantity}</h3>
-					<h3 className="font-bold text-lg">{price}</h3>
-					<h3 className="font-bold text-lg">{email}</h3>
-					<h3 className="font-bold text-lg">{rating}</h3>
-					<h3 className="font-bold text-lg">{details}</h3>
+				<div className="flex justify-evenly items-center my-8">
+					<h3 className="font-semibold">Toy Name: {name}</h3>
+					<p className="font-semibold">Seller Name: {sellerName}</p>
+					<p className="font-semibold">Quantity: {quantity}</p>
+					<p className="font-semibold">Price: ${price}</p>
+					<p className="font-semibold">Category: {category}</p>
+					<p className="font-semibold">Details: {details}</p>
 				</div>
 			</div>
 		</div>

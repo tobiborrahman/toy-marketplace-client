@@ -15,7 +15,7 @@ const Footer = () => {
 							alt="Logo"
 							className="h-20 w-30 mr-2"
 						/>
-						<span className="font-semibold text-lg">
+						<span className="font-semibold text-3xl">
 							Sports Shop
 						</span>
 					</div>
