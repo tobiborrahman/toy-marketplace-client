@@ -30,8 +30,9 @@ const AddToys = () => {
 			email,
 		};
 
-		console.log(newToy);
-		if (category === 'football') {
+		const toLower = category.toLowerCase();
+
+		if (toLower === 'football') {
 			fetch('https://toy-marketplace-server-roan.vercel.app/football', {
 				method: 'POST',
 				headers: {
@@ -41,11 +42,10 @@ const AddToys = () => {
 			})
 				.then((res) => res.json())
 				.then((data) => {
-					console.log(data);
 					if (data.insertedId) {
 						Swal.fire({
 							title: 'Success!',
-							text: 'Toy added successfully',
+							text: 'Toy added in football successfully',
 							icon: 'success',
 							confirmButtonText: 'Okay',
 						});
@@ -53,7 +53,7 @@ const AddToys = () => {
 				});
 		}
 
-		if (category === 'cricket') {
+		if (toLower === 'cricket') {
 			fetch('https://toy-marketplace-server-roan.vercel.app/cricket', {
 				method: 'POST',
 				headers: {
@@ -63,11 +63,10 @@ const AddToys = () => {
 			})
 				.then((res) => res.json())
 				.then((data) => {
-					console.log(data);
 					if (data.insertedId) {
 						Swal.fire({
 							title: 'Success!',
-							text: 'Item added successfully',
+							text: 'Item added in cricket successfully',
 							icon: 'success',
 							confirmButtonText: 'Okay',
 						});
@@ -75,7 +74,7 @@ const AddToys = () => {
 				});
 		}
 
-		if (category === 'volleyball') {
+		if (toLower === 'volleyball') {
 			fetch('https://toy-marketplace-server-roan.vercel.app/volleyball', {
 				method: 'POST',
 				headers: {
@@ -85,11 +84,10 @@ const AddToys = () => {
 			})
 				.then((res) => res.json())
 				.then((data) => {
-					console.log(data);
 					if (data.insertedId) {
 						Swal.fire({
 							title: 'Success!',
-							text: 'Item added successfully',
+							text: 'Item added in volleyball successfully',
 							icon: 'success',
 							confirmButtonText: 'Okay',
 						});
@@ -106,11 +104,10 @@ const AddToys = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
 				if (data.insertedId) {
 					Swal.fire({
 						title: 'Success!',
-						text: 'Item added successfully',
+						text: 'Item added in toys successfully',
 						icon: 'success',
 						confirmButtonText: 'Okay',
 					});

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
+import useTitle from '../../title/title';
 
 const Blogs = () => {
+	useTitle('Blogs')
 	return (
 		<div className="md:py-20 bg-pink-50">
 			<div className="border-2 border-pink-200 p-10 m-10 rounded">

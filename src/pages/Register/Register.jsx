@@ -4,8 +4,10 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { Link } from 'react-router-dom';
 import Footer from '../shared/Footer';
 import Navbar from '../shared/Navbar';
+import useTitle from '../../title/title';
 
 const Register = () => {
+	useTitle("Register")
 	const [error, setError] = useState();
 	const { createUser } = useContext(AuthContext);
 	const {
@@ -15,7 +17,6 @@ const Register = () => {
 		formState: { errors },
 	} = useForm();
 	const onSubmit = (data) => {
-		console.log(data.email);
 		createUser(data.email, data.password)
 			.then((result) => {
 				console.log(result.user);

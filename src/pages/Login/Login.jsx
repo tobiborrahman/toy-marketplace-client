@@ -3,8 +3,10 @@ import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
+import useTitle from '../../title/title';
 
 const Login = () => {
+	useTitle('Login')
 	const [error, setError] = useState();
 
 	const { signIn, googleSignIn } = useContext(AuthContext);
@@ -20,7 +22,6 @@ const Login = () => {
 	} = useForm();
 
 	const onSubmit = (data) => {
-		console.log(data);
 		signIn(data.email, data.password)
 			.then((result) => {
 				console.log(result.user);

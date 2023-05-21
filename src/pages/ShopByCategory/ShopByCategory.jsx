@@ -5,8 +5,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { AuthContext } from '../../Providers/AuthProvider';
+import useTitle from '../../title/title';
 
 const ShopByCategory = () => {
+	useTitle('Shop by Category');
 	const [cricket, setCricket] = useState([]);
 	const [football, setFootball] = useState([]);
 	const [volleyball, setVolleyball] = useState([]);

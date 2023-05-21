@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitle from '../../title/title';
 
 const MyToys = () => {
+	useTitle('My Toys');
 	const { user } = useContext(AuthContext);
 	const [userToys, setUserToys] = useState([]);
 
@@ -17,7 +19,6 @@ const MyToys = () => {
 	}, []);
 
 	const handleDelete = (_id) => {
-		console.log(_id);
 		Swal.fire({
 			title: 'Are you sure?',
 			text: "You won't be able to revert this!",
@@ -36,7 +37,6 @@ const MyToys = () => {
 				)
 					.then((res) => res.json())
 					.then((data) => {
-						console.log(data);
 						if (data.deletedCount > 0) {
 							Swal.fire(
 								'Deleted!',
@@ -56,24 +56,29 @@ const MyToys = () => {
 	return (
 		<div>
 			<div>
-				<nav className="flex justify-between px-5">
-					<th>Name</th>
-					<th>Job</th>
-					<th>Favorite Color</th>
-					<th></th>
+				<nav className="flex justify-between  py-4 bg-gray-200">
+					<th>Toy Name</th>
+					<th>Seller Name</th>
+					<th>Price</th>
+					<th>Category</th>
+					<th>Quantity</th>
+					<th>Update Button</th>
+					<th>Delete Button</th>
 				</nav>
 			</div>
 			{userToys.map((toys) => (
 				<>
-					<div className="overflow-x-auto w-full">
-						<table className="table w-full">
+					<div className="w-full">
+						<div className="table w-full border-b">
 							{/* head */}
 
-							<tbody>
+							<div>
 								{/* row 1 */}
-								<tr>
-									<th>{toys.details}</th>
-
+								<nav className="flex justify-between">
+									<th>{toys.name}</th>
+									<th>{toys.sellerName}</th>
+									<th>${toys.price}</th>
+									<th>{toys.category}</th>
 									<td>{toys.quantity}</td>
 									<th>
 										<Link to={`/updateToy/${toys._id}`}>
@@ -92,9 +97,9 @@ const MyToys = () => {
 											Delete
 										</button>
 									</th>
-								</tr>
-							</tbody>
-						</table>
+								</nav>
+							</div>
+						</div>
 					</div>
 				</>
 			))}

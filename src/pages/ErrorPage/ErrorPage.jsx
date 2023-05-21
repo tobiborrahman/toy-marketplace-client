@@ -1,7 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import useTitle from '../../title/title';
 
 const ErrorPage = () => {
+	useTitle('Error Page')
 	const navigate = useNavigate();
 	const handleNavigate = () => {
 		navigate('/');

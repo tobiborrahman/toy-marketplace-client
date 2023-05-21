@@ -1,8 +1,9 @@
 import React, { useLayoutEffect } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../title/title';
 
 const AllToys = ({ toy }) => {
-	console.log(toy);
+	useTitle('All Toys')
 	const { _id, name, category, quantity, sellerName, price } = toy;
 
 	return (
