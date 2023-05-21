@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
+	const [error, setError] = useState();
+
 	const { signIn, googleSignIn } = useContext(AuthContext);
 
 	const location = useLocation();
@@ -16,6 +18,7 @@ const Login = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
+
 	const onSubmit = (data) => {
 		console.log(data);
 		signIn(data.email, data.password)
@@ -24,7 +27,7 @@ const Login = () => {
 				navigate(from, { replace: true });
 			})
 			.catch((err) => {
-				console.log(err.message);
+				setError(err.message);
 			});
 	};
 
@@ -34,7 +37,7 @@ const Login = () => {
 				console.log(result.user);
 			})
 			.catch((err) => {
-				console.log(err.message);
+				setError(err.message);
 			});
 	};
 	return (
@@ -57,10 +60,11 @@ const Login = () => {
 							type="password"
 							{...register('password', { required: true })}
 						/>
+						<p className="text-red-500">{error}</p>
 						{/* {errors.exampleRequired && <span>This field is required</span>} */}
 						<p className="my-4">
 							Don't Have an Account?{' '}
-							<Link className="text-red-500" to="/register">
+							<Link className="text-red-700" to="/register">
 								Register
 							</Link>
 						</p>

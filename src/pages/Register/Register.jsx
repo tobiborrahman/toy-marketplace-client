@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Link } from 'react-router-dom';
@@ -6,6 +6,7 @@ import Footer from '../shared/Footer';
 import Navbar from '../shared/Navbar';
 
 const Register = () => {
+	const [error, setError] = useState();
 	const { createUser } = useContext(AuthContext);
 	const {
 		register,
@@ -20,7 +21,7 @@ const Register = () => {
 				console.log(result.user);
 			})
 			.catch((err) => {
-				console.log(err);
+				setError(err.message);
 			});
 	};
 	return (
@@ -57,6 +58,7 @@ const Register = () => {
 							type="photoURL"
 							{...register('photoURL', { required: true })}
 						/>
+						<p className="text-red-500">{error}</p>
 						{/* {errors.exampleRequired && <span>This field is required</span>} */}
 						<p className="py-4">
 							Already Have an Account?{' '}
