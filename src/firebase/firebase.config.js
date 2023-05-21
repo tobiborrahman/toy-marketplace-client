@@ -5,12 +5,12 @@ import { initializeApp } from 'firebase/app';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-	apiKey: 'AIzaSyDckJGh-dPEFcyvTrnYJzQp3QW0dpZT9Ts',
-	authDomain: 'sport-toys-network.firebaseapp.com',
-	projectId: 'sport-toys-network',
-	storageBucket: 'sport-toys-network.appspot.com',
-	messagingSenderId: '107787720769',
-	appId: '1:107787720769:web:a00f93993962b6cad64ec0',
+	apiKey: import.meta.env.VITE_apiKey,
+	authDomain: import.meta.env.VITE_authDomain,
+	projectId: import.meta.env.VITE_projectId,
+	storageBucket: import.meta.env.VITE_storageBucket,
+	messagingSenderId: import.meta.env.VITE_messagingSenderId,
+	appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
