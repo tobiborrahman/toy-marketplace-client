@@ -1,7 +1,9 @@
 import React from 'react';
 import Swal from 'sweetalert2';
+import useTitle from '../../title/title';
 
 const AddToys = () => {
+	useTitle('Add Toy');
 	const handleNewToy = (event) => {
 		event.preventDefault();
 		const form = event.target;
@@ -260,7 +262,7 @@ const AddToys = () => {
 									/>
 								</div>
 								<div className="form-control mt-6">
-									<button className="p-2 text-[#331A15] bg-[#D2B48C]">
+									<button className="p-2 text-[#331A15] bg-green-500">
 										Add toy
 									</button>
 								</div>
