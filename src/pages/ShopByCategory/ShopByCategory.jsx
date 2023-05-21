@@ -66,8 +66,8 @@ const ShopByCategory = () => {
 									<h2 className="card-title">
 										{footballToy.name}
 									</h2>
-									<p>{footballToy.price}</p>
-									<p>{footballToy.rating}</p>
+									<p>Price: ${footballToy.price}</p>
+									<p>Rating: {footballToy.rating}</p>
 									<div className="card-actions">
 										<Link
 											to={`football/${footballToy._id}`}
@@ -101,8 +101,8 @@ const ShopByCategory = () => {
 									<h2 className="card-title">
 										{cricketToy.name}
 									</h2>
-									<p>{cricketToy.price}</p>
-									<p>{cricketToy.rating}</p>
+									<p>Price: ${cricketToy.price}</p>
+									<p>Rating: {cricketToy.rating}</p>
 									<div className="card-actions">
 										<Link to={`/cricket/${cricketToy._id}`}>
 											<button className="btn btn-primary">
@@ -130,8 +130,8 @@ const ShopByCategory = () => {
 									<h2 className="card-title">
 										{volleyToy.name}
 									</h2>
-									<p>{volleyToy.price}</p>
-									<p>{volleyToy.rating}</p>
+									<p>Price: ${volleyToy.price}</p>
+									<p>Rating: {volleyToy.rating}</p>
 									<div className="card-actions">
 										<Link
 											to={`volleyball/${volleyToy._id}`}

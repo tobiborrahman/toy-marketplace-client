@@ -2,28 +2,48 @@ import React, { useEffect, useState } from 'react';
 import AllToys from '../AllToys/AllToys';
 
 const Toys = () => {
-	const [toys, setToys] = useState([]);
-	const [limit, setLimit] = useState(0);
+	// 	const [toys, setToys] = useState([]);
+	// 	const [limit, setLimit] = useState(0);
 
-	const handleLimit = (event) => {
+	const [searchText, setSearchText] = useState('');
+	const [categoryData, setCategoryData] = useState([]);
+
+	const handleSearch = (event) => {
 		event.preventDefault();
-		const limit = event.target.limit.value;
-		setLimit(limit);
+		const search = event.target.search.value;
+		console.log(search);
+		setSearchText(search);
 	};
 
 	useEffect(() => {
 		fetch(
-			`https://toy-marketplace-server-roan.vercel.app/toys?limit=${limit}`
+			`https://toy-marketplace-server-roan.vercel.app/toys/${searchText}`
 		)
 			.then((res) => res.json())
 			.then((data) => {
-				setToys(data);
+				setCategoryData(data);
 			});
-	}, [toys, limit]);
+	}, [searchText]);
+
+	// const handleLimit = (event) => {
+	// 	event.preventDefault();
+	// 	const limit = event.target.limit.value;
+	// 	setLimit(limit);
+	// };
+
+	// useEffect(() => {
+	// 	fetch(
+	// 		`https://toy-marketplace-server-roan.vercel.app/toys?limit=${limit}`
+	// 	)
+	// 		.then((res) => res.json())
+	// 		.then((data) => {
+	// 			setToys(data);
+	// 		});
+	// }, [toys, limit]);
 
 	return (
 		<div>
-			<div className="form-control my-5">
+			{/* <div className="form-control my-5">
 				<form onSubmit={handleLimit} className="input-group">
 					<input
 						type="text"
@@ -32,6 +52,17 @@ const Toys = () => {
 						className="input input-bordered w-1/2"
 					/>
 					<input type="submit" value="Load Data" className="btn" />
+				</form>
+			</div> */}
+			<div className="form-control my-5">
+				<form onSubmit={handleSearch} className="input-group">
+					<input
+						type="text"
+						placeholder="Search by category Ex. 'football', 'cricket', 'volleyball'"
+						name="search"
+						className="input input-bordered w-1/2"
+					/>
+					<input type="submit" value="Search toys" className="btn" />
 				</form>
 			</div>
 
@@ -45,7 +76,7 @@ const Toys = () => {
 					<th>View Details</th>
 				</tbody>
 
-				{toys.map((toy) => (
+				{categoryData.map((toy) => (
 					<AllToys key={toy._id} toy={toy}></AllToys>
 				))}
 			</div>

@@ -6,7 +6,7 @@ import { FaGoogle } from 'react-icons/fa';
 import useTitle from '../../title/title';
 
 const Login = () => {
-	useTitle('Login')
+	useTitle('Login');
 	const [error, setError] = useState();
 
 	const { signIn, googleSignIn } = useContext(AuthContext);
