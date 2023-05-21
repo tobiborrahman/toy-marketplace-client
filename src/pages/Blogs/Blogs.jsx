@@ -7,7 +7,6 @@ const Blogs = () => {
 		AOS.init();
 	}, []);
 
-	// data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600"
 	return (
 		<div className="md:my-20">
 			<div
