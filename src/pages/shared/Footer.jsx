@@ -1,89 +1,53 @@
 import React from 'react';
+import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+
+// https://i.ibb.co/6RpYGsm/pngegg.png
+// https://i.ibb.co/rvDdkG4/Pngtree-modern-soccer-player-goal-keeper-3569616.jpg
 
 const Footer = () => {
 	return (
-		<footer className="bg-gray-800 text-gray-300">
-			<div className="container mx-auto py-8 px-4">
-				<div className="flex flex-col md:flex-row justify-between items-center">
-					<div className="flex items-center mb-4 md:mb-0">
+		<footer className="bg-black text-gray-200 py-8">
+			<div className="container mx-auto px-4">
+				<div className="flex flex-wrap justify-between items-center">
+					<div className="flex items-center">
 						<img
-							src="/logo.png"
-							alt="Website Logo"
-							className="h-8 mr-2"
+							src="https://i.ibb.co/6RpYGsm/pngegg.png"
+							alt="Logo"
+							className="h-20 w-30 mr-2"
 						/>
-						<span className="text-lg font-bold">Your Website</span>
+						<span className="font-semibold text-lg">
+							Sports Shop
+						</span>
 					</div>
-					<div className="flex items-center mb-4 md:mb-0">
-						<a
-							href="https://facebook.com"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="mr-4"
-						>
-							<svg
-								className="h-6 w-6 fill-current"
-								viewBox="0 0 24 24"
-							>
-								{/* Facebook icon SVG path */}
-							</svg>
-						</a>
-						<a
-							href="https://twitter.com"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="mr-4"
-						>
-							<svg
-								className="h-6 w-6 fill-current"
-								viewBox="0 0 24 24"
-							>
-								{/* Twitter icon SVG path */}
-							</svg>
-						</a>
-						<a
-							href="https://instagram.com"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="mr-4"
-						>
-							<svg
-								className="h-6 w-6 fill-current"
-								viewBox="0 0 24 24"
-							>
-								{/* Instagram icon SVG path */}
-							</svg>
-						</a>
-					</div>
-					<div className="flex flex-col md:flex-row">
-						<ul className="flex flex-wrap text-sm mb-4 md:mb-0">
-							<li className="mr-6 mb-4 md:mb-0">
-								<a href="/">Home</a>
-							</li>
-							<li className="mr-6 mb-4 md:mb-0">
-								<a href="/about">About</a>
-							</li>
-							<li className="mr-6 mb-4 md:mb-0">
-								<a href="/products">Products</a>
-							</li>
-							<li className="mr-6 mb-4 md:mb-0">
-								<a href="/contact">Contact</a>
-							</li>
-						</ul>
-						<div className="text-sm">
-							<p className="mb-2">Contact Information:</p>
-							<p>Email: contact@yourwebsite.com</p>
-							<p>Phone: 123-456-7890</p>
-						</div>
-						<p className="text-sm">
-							1234 Street Name, City, State, Postal Code
-						</p>
+					<div className="mt-4 md:mt-0">
+						<p>Satkhira, Khulna, Bangladesh</p>
 					</div>
 				</div>
-				<div className="mt-8">
-					<p className="text-sm">
-						&copy; {new Date().getFullYear()} Your Website. All
+				<hr className="my-6 border-gray-700" />
+				<div className="flex flex-col md:flex-row justify-between">
+					<div className="text-sm">
+						&copy; {new Date().getFullYear()} Sports Shop. All
 						rights reserved.
-					</p>
+					</div>
+					<div className="mt-4 md:mt-0">
+						<ul className="flex space-x-4">
+							<li>
+								<a href="#" className="hover:text-gray-400">
+									<FaFacebook />
+								</a>
+							</li>
+							<li>
+								<a href="#" className="hover:text-gray-400">
+									<FaTwitter />
+								</a>
+							</li>
+							<li>
+								<a href="#" className="hover:text-gray-400">
+									<FaInstagram></FaInstagram>
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</footer>
