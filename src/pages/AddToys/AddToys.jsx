@@ -1,7 +1,5 @@
 import React from 'react';
 import Swal from 'sweetalert2';
-import Navbar from '../shared/Navbar';
-import Footer from '../shared/Footer';
 
 const AddToys = () => {
 	const handleNewToy = (event) => {

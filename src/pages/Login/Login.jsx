@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
-import { GoogleAuthProvider } from 'firebase/auth';
-import Navbar from '../shared/Navbar';
-import Footer from '../shared/Footer';
 
 const Login = () => {
 	const { signIn, googleSignIn } = useContext(AuthContext);
 
+	const location = useLocation();
+	const navigate = useNavigate();
+	const from = location.state?.from?.pathname || '/';
+
 	const {
 		register,
 		handleSubmit,
-		watch,
 		formState: { errors },
 	} = useForm();
 	const onSubmit = (data) => {
@@ -21,6 +21,7 @@ const Login = () => {
 		signIn(data.email, data.password)
 			.then((result) => {
 				console.log(result.user);
+				navigate(from, { replace: true });
 			})
 			.catch((err) => {
 				console.log(err.message);

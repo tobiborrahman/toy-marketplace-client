@@ -7,14 +7,14 @@ const MyToys = () => {
 	const { user } = useContext(AuthContext);
 	const [userToys, setUserToys] = useState([]);
 
-	// const url = `https://toy-marketplace-server-roan.vercel.app/toys?email=${user?.email}`;
-	// useEffect(() => {
-	// 	fetch(url)
-	// 		.then((res) => res.json())
-	// 		.then((data) => {
-	// 			setUserToys(data);
-	// 		});
-	// }, []);
+	const url = `https://toy-marketplace-server-roan.vercel.app/toys?email=${user?.email}`;
+	useEffect(() => {
+		fetch(url)
+			.then((res) => res.json())
+			.then((data) => {
+				setUserToys(data);
+			});
+	}, []);
 
 	const handleDelete = (_id) => {
 		console.log(_id);

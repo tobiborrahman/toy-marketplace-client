@@ -19,7 +19,7 @@ const Toys = () => {
 			.then((data) => {
 				setToys(data);
 			});
-	}, [limit]);
+	}, [toys, limit]);
 
 	return (
 		<div>
