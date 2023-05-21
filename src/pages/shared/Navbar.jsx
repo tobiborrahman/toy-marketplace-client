@@ -15,7 +15,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className="flex justify-between items-center bg-black py-8 pr-10">
+		<div className="md:flex justify-between items-center bg-black py-8 pr-10">
 			<div className="flex">
 				<img
 					className="w-28 h-16"
@@ -68,7 +68,7 @@ const Navbar = () => {
 					</Link>
 				</nav>
 			</div>
-			<div className="flex">
+			<div className="md:flex">
 				{user ? (
 					<button onClick={handleLogOut} className="btn mr-3">
 						Log Out

@@ -74,7 +74,7 @@ const ShopByCategory = () => {
 										>
 											<button
 												onClick={notify}
-												className="btn btn-primary"
+												className="btn btn-success"
 											>
 												View Details
 												<ToastContainer />
@@ -105,7 +105,7 @@ const ShopByCategory = () => {
 									<p>Rating: {cricketToy.rating}</p>
 									<div className="card-actions">
 										<Link to={`/cricket/${cricketToy._id}`}>
-											<button className="btn btn-primary">
+											<button className="btn btn-success">
 												View Details
 											</button>
 										</Link>
@@ -136,7 +136,7 @@ const ShopByCategory = () => {
 										<Link
 											to={`volleyball/${volleyToy._id}`}
 										>
-											<button className="btn btn-primary">
+											<button className="btn btn-success">
 												View Details
 											</button>
 										</Link>

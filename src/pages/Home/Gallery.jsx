@@ -17,8 +17,8 @@ const Gallery = () => {
 			data-aos-duration="2000"
 			data-aos-delay="1000"
 		>
-			<h1 className="text-7xl text-center py-20">Gallery</h1>
-			<div className="flex">
+			<h1 className="text-7xl text-center md:py-20">Gallery</h1>
+			<div className="md:flex">
 				<div className="w-[300px]">
 					<img
 						className="w-full"
@@ -26,8 +26,8 @@ const Gallery = () => {
 						alt=""
 					/>
 				</div>
-				<div className="w-[700px]">
-					<div className="flex">
+				<div className="md:w-[700px]">
+					<div className="md:flex">
 						<img
 							className="w-[230px] h-[220px]"
 							src="https://i.ibb.co/48vXd33/img-4.jpg"
@@ -44,7 +44,7 @@ const Gallery = () => {
 							alt=""
 						/>
 					</div>
-					<div className="flex">
+					<div className="md:flex">
 						<img
 							className="w-[230px] h-[217px]"
 							src="https://i.ibb.co/wRT0WSL/img-1.jpg"

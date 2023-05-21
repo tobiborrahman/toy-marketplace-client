@@ -3,7 +3,7 @@ import React from 'react';
 const Products = () => {
 	return (
 		<div>
-			<div className="m-44 rounded-3xl w-[900px] h-[600px] border-2 border-pink-300 flex justify-center items-center bg-pink-50">
+			<div className="md:m-44 rounded-3xl md:w-[900px] md:h-[600px] border-2 border-pink-300 flex justify-center items-center bg-pink-50">
 				<div>
 					<h1 className="text-7xl text-center font-bold mb-5">
 						Newsletter
