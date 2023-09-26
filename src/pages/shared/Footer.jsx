@@ -11,12 +11,12 @@ const Footer = () => {
 				<div className="flex flex-wrap justify-between items-center">
 					<div className="flex items-center">
 						<img
-							src="https://i.ibb.co/6RpYGsm/pngegg.png"
+							src="https://i.ibb.co/0Xmsd1v/toy-logooo.png"
 							alt="Logo"
 							className="h-20 w-30 mr-2"
 						/>
 						<span className="font-semibold text-3xl">
-							Sports Shop
+							Sports Network
 						</span>
 					</div>
 					<div className="mt-4 md:mt-0">

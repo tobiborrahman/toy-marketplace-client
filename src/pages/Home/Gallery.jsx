@@ -10,14 +10,14 @@ const Gallery = () => {
 	}, []);
 	return (
 		<div
-			className="bg-pink-50"
-			data-aos="fade-zoom-in"
-			data-aos-offset="200"
-			data-aos-easing="ease-in-sine"
-			data-aos-duration="2000"
-			data-aos-delay="1000"
+			// className="bg-pink-50"
+			data-aos="fade-right"
+			// data-aos-offset="200"
+			// data-aos-easing="ease-in-sine"
+			// data-aos-duration="2000"
+			// data-aos-delay="1000"
 		>
-			<h1 className="text-7xl text-center md:py-20">Gallery</h1>
+			<h1 className="text-7xl text-center md:py-10">Gallery</h1>
 			<div className="md:flex">
 				<div className="w-[300px]">
 					<img

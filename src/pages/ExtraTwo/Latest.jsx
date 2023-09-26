@@ -9,15 +9,15 @@ const Latest = () => {
 
 	return (
 		<div
-			className="bg-pink-50"
-			data-aos="fade-zoom-in"
-			data-aos-offset="200"
-			data-aos-easing="ease-in-sine"
-			data-aos-duration="2000"
-			data-aos-delay="1500"
+			// className="bg-pink-50"
+			data-aos="fade-left"
+			// data-aos-offset="200"
+			// data-aos-easing="ease-in-sine"
+			// data-aos-duration="2000"
+			// data-aos-delay="1500"
 		>
-			<h1 className="text-7xl text-center py-20">Latest Collection</h1>
-			<div className="md:flex justify-between pb-20">
+			<h1 className="text-7xl text-center py-10">Latest Collection</h1>
+			<div className="md:flex justify-between">
 				<div className="w-1/3 border-2 text-center">
 					<img
 						src="https://m.media-amazon.com/images/I/61-1m5acONL._SL1500_.jpg"
